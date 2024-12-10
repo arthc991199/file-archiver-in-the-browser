@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niebezpieczny Plik ZIP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: black;
+            color: red;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: glitch 2s infinite;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .warning {
+            background: rgba(255, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            font-size: 1.5em;
+            border: 2px solid red;
+            animation: blink 1s infinite;
+        }
+
+        .danger-button {
+            font-size: 2em;
+            color: white;
+            background: red;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .danger-button:hover {
+            background: darkred;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px red, -2px -2px black; }
+            50% { text-shadow: -2px -2px red, 2px 2px black; }
+            100% { text-shadow: 2px -2px black, -2px 2px red; }
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            .warning { font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <h1>UWAGA: ZŁOŚLIWY PLIK WYKRYTY!</h1>
+    <h2>Faktura.zip może uszkodzić Twoje urządzenie!</h2>
+
+    <div class="warning">
+        <p>Ten plik zawiera **NIEBEZPIECZNE** oprogramowanie! Nie klikaj, nie otwieraj i **NATYCHMIAST** opuść tę stronę!</p>
+    </div>
+
+    <button class="danger-button" onclick="alert('Twój system został zainfekowany!')">
+        Kliknij, aby zainfekować!
+    </button>
+</body>
+</html>
